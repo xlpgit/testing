@@ -78,7 +78,7 @@ web是一种基于https协议
 
 ## 2、html基本介绍
 
-html负责结构，css负责样式，js负责行为（浏览器与用户间的交互）
+前端由三大部分组成：html负责结构，css负责样式，js负责行为（浏览器与用户间的交互）
 
 ide：编译器。
 
@@ -186,15 +186,138 @@ alt属性定义图片的提示文字，当图片无法正常加载的时候才�
 \<a href="javascript:;">空链接</a>
 \<a href="javascript:void(0);">空链接</a>
 
+5、表单
 
+form标签就是作为表单数据的根标签。
 
+前端把用户信息收集好之后，点击确定，发送给后端进行数据的保存。action属性的值就是把所有的表单内容，传给某个后台程序来解决。method代表传输数据时候的方法：get会显示在URL地址的后面，post会在http协议的请求体中。
 
+\<form action="" method="post"></form>
 
+type="text"，代表普通的输入框，type="password"代表密码框；placeholder属性可以设置用户的提醒文字
 
+<input type="text" placeholder="请输入用户名"/>
 
+**单选框**：type="radio" ；关注点击时是否实现单选效果，需要保持name一致，证明是一组；点击文字也可以实现切换效果，会提升用户体验，需要在input框中加入id属性，点文字能够切换，需要加label标签，添加for属性与联动的input的id需要一致。默认选中，checked="checked"
 
+<input type="radio" name="sex" id="nan" checked="checked"/> <label for="nan" >男</label> 
+			 <input type="radio" name="sex" id="nv" /><label for="nv">女</label>
 
+**复选框（多选框）**：可以全部选，也可以只选一个；为了提升用户体验也要和单选框一样，点击提示文字，也可以选上。默认选中，checked="checked"。
 
+爱好：<input type="checkbox" id="basketball" checked="checked"/> <label for="basketball">篮球</label>
+			  <input type="checkbox" id="football"/><label for="football">足球 </label>
+
+下拉框：注意默认选项是否符合要求；总共的下拉可选数也要符合要求。默认被选中，selected="selected"
+
+<select name="">
+			  	<option value="">北京</option>
+				<option value="">上海</option>
+				<option value="" selected="selected">广州</option>
+				<option value="">深圳</option>
+			  </select>
+
+文本域：cols和rows分别代表列和行，程序员一般不适用这个属性，因为有兼容性问题，使用css来解决；右下角按钮要关闭，不允许用户自行改变大小，需要在表头加入css：
+
+<style type="text/css">
+			textarea{resize: none;}
+		</style>
+
+<textarea placeholder="请填写您的意见" cols="" rows=""></textarea>
+
+按钮：普通按钮、重置按钮、提交按钮
+
+普通按钮：type="button"；重置按钮：type="reset"，value属性也要设置，若不设置，浏览器会自己写入一个默认值。此按钮的效果是点击后重置页面中的表单数据，而非清空；提交按钮，type=submit;
+
+6、列表
+
+无序标签：ul li   有序标签：ol li
+
+<ul>
+			<li>111</li>
+			<li>222</li>
+		</ul>
+```html
+  <ol>
+		<li>111</li>
+		<li>222</li>
+	</ol>
+```
+## 3、css
+
+style写在head里边，type=“text/css”，此代码可有可无；div{}表示对div里的内容进行修改，color文字颜色，font-size字体大小，px代表像素，计算机中的计量单位。
+
+<style type="text/css">
+			div{color: maroon; font-size:30px;}
+</style>
+
+**css选择器**：简单选择器，复合选择器。
+
+简单选择器：标签名选择器，类名选择器，id名选择器
+
+<style type="text/css">
+			/* div{color: maroon; font-size:20px;}
+			p{color: aqua;}
+			h2{color: blue;} */
+			/* #p1{color: red;}
+			#p2{color: green;}
+			#p3{color: blue;} */
+			.pname1{
+				color: red;
+			}
+</style>
+
+		<p id="p1" class="pname1">段落1</p>
+		<p id="p2" class="pname1">段落2</p>
+		<p id="p3" class="pname1">段落3</p>
+		<div class="pname1">
+			使用css改变样式1
+		</div>
+标签名选择器：通过标签名称来选中元素；
+
+<style type="text/css">
+			div{color: maroon; font-size:20px;}
+			p{color: aqua;}
+			h2{color: blue;}
+</style>
+
+类名选择器(class)：通过标签的类名来选中元素；累选择器使用.类名；类名可以重复使用；同一个标签可以设置多个类名，使用空格分割即可，id选择器只允许每个标签有一个id名。class不允许数字开头命名；class不允许使用符号，除了下划线_和中划线-可以使用；class不推荐使用中文；名字最好见名知意。
+
+.pname1{color: red;}
+
+id名选择器：通过标签的id名来选中元素；#id的属性值，叫做id选择器。id的值一定不能重复；id命名数字不能开头；id不推荐使用中文；id不允许使用符号，除了下划线_和中划线-可以使用；名字最好见名知意。
+
+#p1{color: red;}
+
+**css特性**：继承性、覆盖性
+
+继承性：只要给祖先标签设置的css文字属性，都可以继承给后代。比如div里有span标签，修改div颜色，span颜色也修改。
+
+覆盖性：权重相同的时候，先写的样式会被后写的覆盖。
+
+**复合选择器**：后代选择器，并列选择器
+
+**后代选择器**，使用空格来实现；后代指的是儿子、孙子等。div下所有span标签。
+
+同一个标签设置id和class不会有冲突，哪怕id和class的值一样也不会有问题。
+
+可以使用标签、类名、id
+
+<style type="text/css"> div span{color:red;} .bz span{color: red;} #div1 span{color: red;} </style>
+
+<div class="bz" id="div1">
+			<p>
+				<span>span内容</span>
+			</p>
+</div>
+
+**并列（并集）选择器**：用逗号分隔；可以使用任意一种普通选择器来进行书写。
+
+div与p是同一级：
+
+div,p{color: red;}
+
+#div1,#div2,.p1{color: red;}
 
 
 
