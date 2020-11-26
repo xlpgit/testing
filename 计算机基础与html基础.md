@@ -319,17 +319,192 @@ div,p{color: red;}
 
 #div1,#div2,.p1{color: red;}
 
-**基础选择器权重**：
+**基础选择器权重**：针对同一个标签设置css才有权重：id>class>标签；继承的权重最低
 
-针对同一个标签设置css才有权重：id>class>标签；继承的权重最低
+复合选择器权重：针对同一个标签设置css属性，最终计算权重最大的才会生效。
 
-复合选择器权重：
+css文件存放位置：内嵌css、外链式css、行内css
 
-针对同一个标签设置css属性，最终计算权重最大的才会生效。
+**内嵌css**：css与html写在同一文件中，位于head中，style。
 
+**外链式css**：link将css文件引入到html的方法。
 
+需要重新写一个css文件，并在head中引入到当前html文件中。<link rel="stylesheet" type="text/css" href="css.css">
 
+**行内css**：写在标签内部
 
+<div style="color: red; font-size: 12px;">哈哈哈</div>
 
+总结：
 
+内嵌式css不用加载外部的css文件，网页的加载速度就更快一些，电商网站的首页对于网站的打开速度有更高的要求。
+
+对比内嵌式，外链式可以实现css代码和html代码的分离效果，方便代码的修改。除了电商网站的首页外，都使用外链式即可。
+
+行内式css一定不要写，因为修改十分不方便，还会导致页面混乱，加载速度会变慢。
+
+外链link和内嵌css权重一样，先写的被后写的覆盖。都比行内样式的权重低。
+
+css盒子模型：
+
+内容，内容与边框之间的距离为内边距padding，边框线为属性border，边框与边框（两个盒子）之间的距离为外边距margin。
+
+盒子模型边框属性border：
+
+<style type="text/css">
+			div{width: 100px; height: 100px;background: pink;
+			/* 最基本的边框写法 */
+			/* border: 1px solid red; */
+			/* 单独设置每个方向的边框效果 solid为实线，dashed为虚线*/
+			border-top: 1px solid red;
+			border-bottom: 2px dashed blue;
+			border-left: 5px solid yellow;
+			border-right: 10px dashed green;
+			}
+</style>
+
+盒子模型内边距padding：
+
+<style type="text/css">
+			div{width: 100px; height: 100px;background: pink;
+			/* 最基本的内边距、内填充、padding写法 四个方向间距一致 */
+			/* padding:10px; */
+			/* 以下是单独设置每个方向的语法 */
+			/* padding-left: 10px;
+			padding-right: 20px;
+			padding-top: 30px;
+			padding-bottom: 40px; */
+			/* 如果写两个值代表：值1上下内边距，值2左右内边距 */
+			padding: 10px 20px;
+			/* 三个值代表：上 左右 下 */
+			padding: 10px 20px 30px;
+			/* 四个值：上 右 下 左 顺时针 */
+			padding: 10px 20px 30px 40px;
+			}
+</style>
+
+盒子模型外边距margin：
+
+<style type="text/css">
+			div{width: 100px; height: 100px;background: pink;
+			/* 最基本的边框写法 */
+			/* border: 1px solid red; */
+			/* 单独设置每个方向的边框效果 */
+			border-top: 1px solid red;
+			border-bottom: 2px dashed blue;
+			border-left: 5px solid yellow;
+			border-right: 10px dashed green;
+			/* 最基本的内边距、内填充、padding写法 四个方向间距一致 */
+			/* padding:10px; */
+			/* 以下是单独设置每个方向的语法 */
+			/* padding-left: 10px;
+			padding-right: 20px;
+			padding-top: 30px;
+			padding-bottom: 40px; */
+			/* 如果写两个值代表：值1上下内边距，值2左右内边距 */
+			/* padding: 10px 20px; */
+			/* 三个值代表：上 左右 下 */
+			/* padding: 10px 20px 30px; */
+			/* 四个值：上 右 下 左 顺时针 */
+			padding: 10px 20px 30px 40px;
+			/* 一个值代表四个方向的外边距、外填充、margin相同 */
+			/* margin: 10px; */
+			/* 外边距也可以单独设置四个方向  */
+			/* margin-left: 10px;
+			margin-right: 20px;
+			margin-top: 30px;
+			margin-bottom: 40px; */
+			/* 上下 左右 */
+			/* margin: 10px 20px; */
+			/* 上 左右 下 */
+			/* margin: 10px 20px 30px; */
+			/* 顺时针，上 右 下 左 */
+			margin: 10px 20px 30px 40px;
+			}
+		</style>
+
+## 4、html5
+
+h5指的是：html5+css+javascript
+
+html5结构标签：
+
+<body>
+		<!-- 在html5中这些结构标签都可以增加网站的语义化，从而提升搜索引擎对网站的排名 -->
+
+		<header>头</header>
+		<nav>导航</nav>
+		<aside>侧边栏</aside>
+		<article>文章块</article>
+		<footer>底部</footer>
+​	</body>
+
+**数据列表标签**：下拉表可以手动输入
+
+<!-- 数据列表标签：input中要设置list属性，里面值等于想要对应的数据datalist的id值，他们两个才能对应起来;option中的value要删掉，否则无法实现效果。-->
+
+![image-20201126165034097](/Users/xuleping/Library/Application Support/typora-user-images/image-20201126165034097.png)
+
+**html5新增表单验证相关属性：**
+
+<form action="" method="get">
+			<!-- required属性就是来设置空判断，输入框为空时提醒;autofocus自动获取焦点，光标自动在输入框 -->
+			<input type="text" required="required" autofocus="autofocus"/><br />
+			<!-- 属性autocomplete设置为on，默认为off，name的值对应着我们提交的数据所保存的文件夹一样的地方。再次填写时，会有以前填写内容的提示 -->
+			<input type="text" autocomplete="on" name="hd"/>
+			<input type="submit" value="提交" />
+		</form>
+
+**html5新增表单标签：**
+
+<form action="" method="get">
+			<!-- type="email" 实现邮箱地址的验证 -->
+			邮箱：<input type="email"><br />
+			<!-- type="url"就可以实现验证是否为网址，必须包含http://协议 -->
+			网址：<input type="url" /><br />
+			<!-- type="number" 让输入框只输入数字 -->
+			数字：<input type="number" /><br />
+			<!-- type="search" 可以在文本框中的最后位置出现一个x，点击后可把内容清空 -->
+			搜索：<input type="search" /><br />
+			<!-- type="datetime-local 让用户可以直接通过此文框弹出的时间日期来进行选择 -->
+			详细日期时间：<input type="datetime-local" /><br />
+			<!-- type="month" 可以直接选择月份 -->
+			月份：<input type="month" /><br />
+			<!-- type="week" 显示星期 -->
+			星期：<input type="week" /><br />
+			<!-- type="time" 显示时间 -->
+			时间：<input type="time" /><br />
+			<!-- type="date" 只显示日期 -->
+			年月日：<input type="date" /><br />
+			<!-- type="range"显示滑块 -->
+			<input type="range" />
+			<input type="submit" value="提交"/><br />
+</form>
+
+html5音频标签：
+
+<!-- 音频标签价值很高，浏览器都想以自己为标准，所以W3C联盟组织，就规定了浏览器对音频标签的兼容性要求。
+		 如果想要主流的浏览器都能很好的播放音频，就需要把音频设置为不同的格式，都加载到页面中，这样就可以保证浏览器兼容性。-->
+		<!-- <audio src="shenshi.mp3" controls="controls" autoplay="autoplay" loop="loop"></audio> -->
+		<!-- 一个audio标签可以添加多个音频的源 -->
+		<!-- controls音频条，autoplay自动播放，loop循环播放-->
+
+		<audio controls="controls" autoplay="autoplay" loop="loop">
+			<source src="shenshi.mp3"></source>
+			<source src="shenshi.ogg"></source>
+		</audio>
+
+html5视频标签：
+
+<!-- 视频标签 -->
+
+		<video controls="controls" autoplay="autoplay" loop="loop">
+			<!-- 执行顺序，由上向下，能识别哪个就直接播放 -->
+			<source src="video.mp4" type="video/mp4"></source>
+			<source src="video.ogg" type="video/ogg"></source>
+			<!-- 浏览器无法识别以上视频时，才会显示给用户看，用户可以点击链接下载视频，使用本地的播放器来看 -->
+			当前浏览器不支持video直接播放，点击这里下载视频：<a href="">下载视频</a>
+		</video>
+
+## 5、css3
 

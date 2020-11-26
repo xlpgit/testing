@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- 在html5中这些结构标签都可以增加网站的语义化，从而提升搜索引擎对网站的排名 -->
+		<!-- <header>头</header>
+		<nav>导航</nav>
+		<aside>侧边栏</aside>
+		<article>文章块</article>
+		<footer>底部</footer> -->
+		<!-- 数据列表标签：input中要设置list属性，里面值等于想要对应的数据datalist的id值，他们两个才能对应起来;
+		 option中的value要删掉，否则无法实现效果。-->
+		请填写您的座驾：<input type="text" list="car"/>
+		<datalist id="car">
+			<option>奔驰</option>
+			<option>宝马</option>
+			<option>兰博基尼</option>
+			<option>奥拓</option>
+		</datalist>
+		请输入您的化妆品：<input type="text" list="hz" />
+		<datalist id="hz">
+			<option>大宝</option>
+			<option>sk2</option>
+			<option>神仙水</option>
+			<option>六神</option>
+		</datalist>
+	</body>
+</html>

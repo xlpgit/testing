@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- 音频标签价值很高，浏览器都想以自己为标准，所以W3C联盟组织，就规定了浏览器对音频标签的兼容性要求。
+		 如果想要主流的浏览器都能很好的播放音频，就需要把音频设置为不同的格式，都加载到页面中，这样就可以保证浏览器兼容性。-->
+		<!-- <audio src="shenshi.mp3" controls="controls" autoplay="autoplay" loop="loop"></audio> -->
+		<!-- 一个audio标签可以添加多个音频的源 -->
+		<!-- controls音频条，autoplay自动播放，loop循环播放-->
+		<!-- <audio controls="controls" autoplay="autoplay" loop="loop">
+			<source src="shenshi.mp3"></source>
+			<source src="shenshi.ogg"></source>
+		</audio><br /> -->
+		
+		<!-- 视频标签 -->
+		<video controls="controls" autoplay="autoplay" loop="loop">
+			<!-- 执行顺序，由上向下，能识别哪个就直接播放 -->
+			<source src="video.mp4" type="video/mp4"></source>
+			<source src="video.ogg" type="video/ogg"></source>
+			<!-- 浏览器无法识别以上视频时，才会显示给用户看，用户可以点击链接下载视频，使用本地的播放器来看 -->
+			当前浏览器不支持video直接播放，点击这里下载视频：<a href="">下载视频</a>
+		</video>
+	</body>
+</html>
