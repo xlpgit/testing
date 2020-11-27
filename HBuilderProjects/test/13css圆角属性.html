@@ -4,15 +4,20 @@
 		<meta charset="utf-8">
 		<title></title>
 		<style type="text/css">
-			div{width: 100px; height: 50px; border: 1px solid black; margin: 20px;background: gray; border-radius: 10px;}
+			div{width: 100px; height: 50px; border: 1px solid black; margin: 20px;background: gray; }
+			/* border-radius 一个值表示四个方向都一致 */
+			.div1{border-radius: 8px;}
+			/* 顺时针 左上，右上，右下 左下 */
+			.div2{border-radius: 8px 0 0 0;}
+			.div3{border-radius: 8px 0;}
 		</style>
 	</head>
 	<body>
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
+		<div class="div1"></div>
+		<div class="div2"></div>
+		<div class="div3"></div>
+		<div class="div4"></div>
+		<div class="div5"></div>
+		<div class="div6"></div>
 	</body>
 </html>

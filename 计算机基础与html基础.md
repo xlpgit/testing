@@ -509,6 +509,50 @@ html5视频标签：
 
 ## 5、css3
 
+**css3圆角属性**：border-radius设置div椭圆形
+
+**css3渐变颜色属性**在background中的linear-gradient（渐变方向也可以写角度的具体值180deg，色值，色值）颜色值后面添加百分比，从0开始到100%设置颜色渐变的区域：background: linear-gradient(to right,red,blue)
+
+**css3盒子阴影效果：**
+
+/* 盒子阴影效果 */
+			div{width: 200px; height:100px; background: gold; margin: 10px; border-radius: 10px;
+			 border: 1px solid black;}
+			 /* box-shadow：水平方向 垂直方向 阴影大小 阴影颜色*/
+			 .div1{box-shadow: 0px 0px 30px red;}
+			 /* inset实现的效果就是内阴影 */
+			 .div2{box-shadow: 0px 0px 30px red inset;}
+
+**css3半透明背景：**
+
+/* 透明背景 */
+			 body{background:url(01.jpeg)}
+			 /* background:rgba（红，绿，蓝，透明度值）
+			 红绿蓝都是色值号设置的，可以使用浏览器调试工具来把想要的色值拿到；
+			 透明度的值：0到1之间，0代表全透明，1代表全不透明。可以设置0到1之间的小数来代表透明度的百分比。 */
+			 div{width: 300px; height: 300px; border-radius:10px; background:rgba(85,124,173,0.5); 
+			 box-shadow: 3px 3px 8px black;}
+
+css3文字阴影：text-shadow属性：x轴 y轴 阴影大小 色值；div{text-shadow:1px 1px 0px white}
+
+css3旋转、缩放、位移
+
+/* 翻转：transform: rotate(角度值) */
+			 .div1{transform: rotate(90deg);}
+			 /* 缩放：transform: scale(缩放比例) */
+			 .div2{transform: scale(0.3);}
+			 /* transform: translate(x轴位移,y轴位移) */
+			 .div3{transform: translate(100px,100px);}
+
+css3过渡属性：
+
+ /* 过渡属性 */
+			 div{width: 200px; height: 50px; background: rgba(255, 0, 56, 0.3); margin: 50px;
+			 transition: all 1s;}
+			 /* transition：想要过渡的属性，一般都写all，代表所有属性只有变化了都以过渡动画的形式展示，时间代表动画的执行时间 */
+			 /* hover叫css伪类，鼠标悬停时候的样式 */
+			 .div1:hover{transform: scale(1.5);background: rgba(25, 0, 56, 0.3);}
+
 css3属性hover同时实现放大和旋转效果
 
 div:hover{
