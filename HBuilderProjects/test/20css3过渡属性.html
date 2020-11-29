@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/* 旋转并放大 */
+			/* body{background:url(01.jpeg)} */
+			/* div{
+				width: 100px;
+				height: 20px;
+				border: 1px solid red;
+				border-radius:10px;
+				margin:100px;
+				background:rgba(114, 255, 47, 0.5);
+				transition:all 1s;
+				}
+			div:hover{ */
+			/* 同一个属性名，值使用空格分隔即可实现多个值书写
+				/* transform:scale(1.3) rotate(360deg);
+				} */
+
+			/* 会旋转的头像 */
+			/* border-radius: 50% 代表设置成正圆形（前提是形状为正方形） */
+			/* transition 第一个时间代表动画的运行时间，第二个时间代表延迟时间，默认的为ease的匀速，ease-in变加速，ease-out变减速；ease-in-out先加速后减速 */
+			/* img{width: 50px;height: 50px;border: 5px solid cadetblue; border-radius: 50%;
+				margin:10px;transition:all 1s 2s ease-in;}
+				img:hover{transform:rotate(360deg)} */
+
+			/* 图片放大并旋转 */
+			/* img{margin:30px; border: 1px solid red; transition:all 1s .5s;} */
+			/* 时间如果o.x，前面的0可以省略 */
+			/* img:hover{transform:scale(1.2) rotate(5deg);} */
+
+			/* 图片y轴旋转 */
+			/* img{border: 1px solid red; margin:10px;transition:all 1s;} */
+			/* transform:roateY沿着y轴旋转；roateX沿着x轴旋转；默认是沿中心旋转 */
+			/* img:hover{transform:rotateY(180deg)} */
+
+			/* css自定义样式  animation调用动画,infinite无限循环动画 alternate逆向动画*/
+			div {
+				width: 100px;
+				height: 30px;
+				border: 1px solid red;
+				border-radius: 10px;
+				animation: go 1s infinite alternate;
+			}
+
+			/* 使用keyframes定义动画 */
+			@keyframes go {
+
+				/* 开始时候状态 */
+				from {
+					background: red;
+					transform: translate(0px, 0px);
+				}
+
+				/* 结束时候状态 */
+				to {
+					background: blue;
+					transform: translate(100px, 0px)
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<!-- <div>小鸟</div> -->
+		<!-- <img src="ali.jpg"/>
+		<img src="labixiaoxin.jpg"/>
+		<img src="kenan.jpg"/> -->
+		<!-- <img src="ali.jpg" /> -->
+		<div>飞呀飞呀飞</div>
+	</body>
+</html>

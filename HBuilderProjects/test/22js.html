@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/* css进行实体化 */
+			/* #div1{width: 100px; height: 100px; background:red;} */
+			div {
+				width: 100px;
+				height: 100px;
+				background: skyblue;
+				margin: 10px
+			}
+		</style>
+	</head>
+	<body>
+		<!-- <div id="div1">div1</div>
+		<div id="div2">div2</div> -->
+		<div id="box"></div>
+		<input type="button" value="变宽" id="btn_w" />
+		<input type="button" value="变高" id="btn_h" />
+		<input type="button" value="变色" id="btn_c" />
+	</body>
+</html>
+<script type="text/javascript">
+	// 弹出对话框 所有的js代码都要使用英文状态下的符号。小括号中可以使用双引号或者单引号来包裹文字。
+	// alert("登录过期");
+
+	// 找元素 document代表页面文档；getElementById 命名方式为驼峰命名法，用法是使用id获取页面中的标签、标记、元素
+	// document.getElementById("div1");
+
+	// js实体化
+	// var elementStyle=document.getElementById("div2").style;
+	// elementStyle.width="200px";
+	// elementStyle.height="200px";
+	// elementStyle.background="blue";
+
+	// 事件：在什么情况下做了什么事情； 事件三要素：事件源.事件类型=匿名函数里边写的就是要执行的命令。
+	// 找到页面中的id元素后，习惯性的保存到变量中，方便后续的使用
+	var btn_w = document.getElementById("btn_w");
+	var box = document.getElementById("box");
+	var btn_h=document.getElementById("btn_h");
+	var btn_c=document.getElementById("btn_c");
+	btn_w.onclick = function() {
+		// 点击后执行的命令
+		box.style.width="200px";
+	}
+	btn_h.onclick = function(){
+		box.style.height="200px";
+	}
+	btn_c.onclick = function(){
+		box.style.background="red";
+	}
+</script>

@@ -508,3 +508,106 @@ html5视频标签：
 
 ## 5、css3
 
+css3属性hover同时实现放大和旋转效果
+
+div:hover{
+				/* 同一个属性名，值使用空格分隔即可实现多个值书写 */
+				transform:scale(1.3) rotate(360deg);
+				}
+
+/* 会旋转的头像 */
+				/* border-radius: 50% 代表设置成正圆形（前提是形状为正方形） */
+				/* transition 第一个时间代表动画的运行时间，第二个时间代表延迟时间，默认的为ease的匀速，ease-in变加速，ease-out变减速；ease-in-out先加速后减速 */
+				img{width: 50px;height: 50px;border: 5px solid cadetblue; border-radius: 50%;margin:10px;transition:all 1s 2s ease-in;}
+				img:hover{transform:rotate(360deg)}
+
+/* 图片放大并旋转，transform */
+				img{margin:30px; border: 1px solid red; transition:all 1s .5s;}
+				/* 时间如果o.x，前面的0可以省略 */
+				img:hover{transform:scale(1.2) rotate(5deg);}
+
+/* 图片y轴旋转 */
+				img{border: 1px solid red; margin:10px;transition:all 1s;}
+				/* transform:roateY沿着y轴旋转；roateX沿着x轴旋转；默认是沿中心旋转 */
+				img:hover{transform:rotateY(180deg)}
+
+/* css自定义样式  animation调用动画,infinite无限循环动画 alternate逆向动画  颜色渐变，左右移动*/
+			div {
+				width: 100px;
+				height: 30px;
+				border: 1px solid red;
+				border-radius: 10px;
+				animation: go 1s infinite alternate;
+			}
+
+			/* 使用keyframes定义动画 */
+			@keyframes go {
+	
+				/* 开始时候状态 */
+				from {
+					background: red;
+					transform: translate(0px, 0px);
+				}
+	
+				/* 结束时候状态 */
+				to {
+					background: blue;
+					transform: translate(100px, 0px)
+				}
+			}
+卸载应用程序时出现颤抖效果：
+
+img:hover{animation:dou .1s 1s infinite alternate}
+			/* 可以使用百分比替代默认的from、to */
+			/* animation：时间如果出现两个，第一个代表动画运动时间，第二个代表延迟时间，也可以设置ease等变速效果 */
+			@keyframes dou{
+				0%{transform:rotate(-5deg)}
+				50%{transform:rotate(0deg)}
+				100%{transform:rotate(5deg)}
+			}
+
+## 6、js（JavaScript）
+
+简介：初期是为了验证表单数据是否合法。比如用户名、密码等格式的提醒，写完输入框直接进行验证，而不是提交的时候进行验证。
+
+现在是控制html和css的结构和样式。
+
+<script type="text/javascript">
+	// 弹出对话框 所有的js代码都要使用英文状态下的符号。小括号中可以使用双引号或者单引号来包裹文字。
+	alert("登录过期");
+</script>
+
+**js找元素、找标签、找标记**
+
+// 找元素 document代表页面文档；getElementById 命名方式为驼峰命名法，用法是使用id获取页面中的标签、标记、元素；验证的使用可以用浏览器，打开f12调试工具下的console，输入此命令即可。
+
+​	document.getElementById("div1");
+
+**js实体化**：
+
+// js实体化 先找到，再用英文状态下的点进行连接 可定义变量进行简化，var elementStyle=document.getElementById("div2").style;以后直接用变量使用就行。变量起名字注意事项：可以使用中文，可以使用符号_$，命名不可以使用数字开头，不允许使用js已经占用的单词（保留字）
+	document.getElementById("div2").style.width="200px";
+	document.getElementById("div2").style.height="200px";
+	document.getElementById("div2").style.background="blue";
+
+js点击事件：点击三个按钮分别变宽、变高、变色
+
+
+	<script type="text/javascript">
+	// 事件：在什么情况下做了什么事情； 事件三要素：事件源.事件类型=匿名函数里边写的就是要执行的命令。
+	// 找到页面中的id元素后，习惯性的保存到变量中，方便后续的使用
+	var btn_w = document.getElementById("btn_w");
+	var box = document.getElementById("box");
+	var btn_h=document.getElementById("btn_h");
+	var btn_c=document.getElementById("btn_c");
+	btn_w.onclick = function() {
+		// 点击后执行的命令
+		box.style.width="200px";
+	}
+	btn_h.onclick = function(){
+		box.style.height="200px";
+	}
+	btn_c.onclick = function(){
+		box.style.background="red";
+	}
+	</script>
