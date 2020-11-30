@@ -871,3 +871,50 @@ HTTP协议：超文本传输协议，是一种规定了浏览器和服务器之�
 URL（统一资源定位符）：互联网上资源的地址、位置。每个资源都有一个唯一的URL。
 
 格式：协议：//主机地址/路径
+
+HTTP之请求内容
+
+HTTP请求组成：请求行、请求头、请求空行和请求数据
+
+<img src="/Users/xuleping/Library/Application Support/typora-user-images/image-20201130230542875.png" alt="image-20201130230542875" style="zoom:40%;" />
+
+get请求：提交的数据显示在地址栏，不安全；提交的数据量有限；不重要的数据使用get
+
+post请求：隐式提交数据，更安全；没有数据量大小的限制；重要数据使用post
+
+HTTP协议之响应内容：
+
+HTTP响应组成：响应行、响应头、响应体
+
+<img src="/Users/xuleping/Library/Application Support/typora-user-images/image-20201130232012165.png" alt="image-20201130232012165" style="zoom:40%;" />
+
+HTTP协议之常见响应状态码
+
+状态码有三位数字组成，第一位数字定义了响应类型，有5种可能取值。
+
+<img src="/Users/xuleping/Library/Application Support/typora-user-images/image-20201130232510452.png" alt="image-20201130232510452" style="zoom:40%;" />
+
+API接口
+
+应用程序编程接口（API）：以HTTP协议形式提供，定义了输入、输出、功能描述的服务。
+
+架构师制定接口文档，给前后端统一的标准。
+
+<img src="/Users/xuleping/Library/Application Support/typora-user-images/image-20201130233440778.png" alt="image-20201130233440778" style="zoom:33%;" />
+
+接口和客户端功能测试的关系
+
+1）客户端通过调用服务端提供的接口来获取数据；
+
+2）客户端功能测试过程中需要和接口交互的场景：
+
+客户端测试过程发现bug，需要排查是客户端代码问题还是服务端代码问题；
+
+客户端测试过程中需要借助接口调用造一些返回测试，辅助客户端功能测试；
+
+跳过客户端代码的验证限制直接访问服务端；
+
+仿真弱网环境，进行弱网测试
+
+### 6、测试计划与测试报告
+
