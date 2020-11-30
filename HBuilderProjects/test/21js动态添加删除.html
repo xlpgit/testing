@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			div{width: 200px; height: 200px; background: skyblue; margin:5px;}
+		</style>
+		<!-- innerHTML作用是设置标签的中间内容 -->
+		<script type="text/javascript">
+			window.onload=function(){
+				var box=document.getElementById("box");
+				var btn_add=document.getElementById("btn_add");
+				var btn_del=document.getElementById("btn_del");
+				btn_add.onclick=function(){
+					// 点击后设置div中的html显示文字
+					box.innerHTML="点击后此处文字才会被innerHTML设置成功";
+				}
+				btn_del.onclick=function(){
+					// 点击删除按钮，让文字清空
+					box.innerHTML="";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box"></div>
+		<input type="button" value="添加" id="btn_add"/>
+		<input type="button" value="删除" id="btn_del" />
+	</body>
+</html>

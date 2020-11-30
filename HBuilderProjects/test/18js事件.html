@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			div{width:200px;height:100px;background: skyblue; border:1px solid black;}
+		</style>
+	</head>
+	<body>
+		<div id="div1">单击</div>
+		<div id="div2">双击</div>
+		<div id="div3">鼠标移入</div>
+		<div id="div4">鼠标移出</div>
+		<!-- 需要js控制的时候，再添加class或id来准确找到该元素 -->
+		<div>无效果</div>
+	</body>
+</html>
+<!-- 外链js和内嵌js，先写的先执行，后写的后执行 -->
+<script type="text/javascript" src="19js.js">
+	// 点击div执行弹出对话框操作
+	var div1=document.getElementById("div1");
+	div1.onclick = function(){
+		alert("单击事件被捕获");
+	}
+	// ondblclick代表双击事件
+	var div2=document.getElementById("div2");
+	div2.ondblclick=function(){
+		alert("双击事件被捕获");
+	}
+	// onmouseover代表鼠标移入事件
+	var div3=document.getElementById("div3");
+	div3.onmouseover=function(){
+		alert("鼠标移入事件被捕获");
+	}
+	// onmouseout 代表鼠标移出事件
+	var div4=document.getElementById("div4");
+	div4.onmouseout=function(){
+		alert("鼠标移出事件被捕获");
+	}
+	
+	alert("内嵌js");
+</script>

@@ -1,0 +1,6 @@
+<!-- xml传输数据，自定义标签，双标签，标签嵌套不能出问题 -->
+<person>
+	<height>1.8</height>
+	<age>18</age>
+	<wight>100</wight>
+</person>

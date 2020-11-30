@@ -635,7 +635,7 @@ img:hover{animation:dou .1s 1s infinite alternate}
 	document.getElementById("div2").style.height="200px";
 	document.getElementById("div2").style.background="blue";
 
-js点击事件：点击三个按钮分别变宽、变高、变色
+**js点击事件**：点击三个按钮分别变宽、变高、变色
 
 
 	<script type="text/javascript">
@@ -656,3 +656,218 @@ js点击事件：点击三个按钮分别变宽、变高、变色
 		box.style.background="red";
 	}
 	</script>
+**js找页面标签的方法：**
+
+通过id定位元素：document.getElementById("div1");
+
+// 通过类名定位元素，必须在后面添加[数字] 数字计数从0开始 点击div弹框
+	// document.getElementsByClassName("div1")[0].onclick=function(){
+	// 	alert();
+	// }
+
+	// 通过标签名字定位元素，也要加[数字]
+	// document.getElementsByTagName("div")[0].onclick=function(){
+	// 	alert();
+	// }
+	 
+	 // 通过name属性值定位元素，也需要加[数字] name的值可以重复出现
+	 document.getElementsByName("hbu")[0].onclick=function(){
+		 alert();
+	 }
+js事件总结：
+
+<script>
+	// 点击div执行弹出对话框操作
+	var div1=document.getElementById("div1");
+	div1.onclick = function(){
+		alert("单击事件被捕获");
+	}
+	// ondblclick代表双击事件
+	var div2=document.getElementById("div2");
+	div2.ondblclick=function(){
+		alert("双击事件被捕获");
+	}
+	// onmouseover代表鼠标移入事件
+	var div3=document.getElementById("div3");
+	div3.onmouseover=function(){
+		alert("鼠标移入事件被捕获");
+	}
+	// onmouseout 代表鼠标移出事件
+	var div4=document.getElementById("div4");
+	div4.onmouseout=function(){
+		alert("鼠标移出事件被捕获");
+	}
+</script>
+
+js书写位置：
+
+内嵌js：在html底部添加<script></script>
+
+外链js：添加另外的js文件，引入到src属性中
+
+<script type="text/javascript" src="19js.js"></script>
+
+强烈推荐外链js，实现了代码的分离，修改会很方便。
+
+注意：html中写js代码，行内js html的标签属性值要使用双引号，里面的js代码使用单引号；行内js强烈不推荐使用，因为没有实现代码的分离效果，语法修改不方便。
+
+js代码搬家：
+
+js代码<script></script>也应该放在head标签最后，而不是html后面。放在head里需要加window.onload
+
+<!-- 代码由上向下运行，没有获取到box。需要添加window.onload，当页面所有html内容都加载完毕后才执行此处的代码 -->
+
+		<script type="text/javascript">
+			window.onload=function(){
+				var box=document.getElementById("box");
+				box.onclick=function(){
+					alert("点击成功")
+				}
+			}	
+		</script>
+
+**js动态添加和删除文本：**
+
+<!-- innerHTML作用是设置标签的中间内容 -->
+
+		<script type="text/javascript">
+			window.onload=function(){
+				var box=document.getElementById("box");
+				var btn_add=document.getElementById("btn_add");
+				var btn_del=document.getElementById("btn_del");
+				btn_add.onclick=function(){
+					// 点击后设置div中的html显示文字
+					box.innerHTML="点击后此处文字才会被innerHTML设置成功";
+				}
+				btn_del.onclick=function(){
+					// 点击删除按钮，让文字清空
+					box.innerHTML="";
+				}
+			}
+		</script>
+
+js函数：
+
+<script type="text/javascript">
+			window.onload=function(){
+				// 自定义函数作用：简化代码，实现重复性代码的简单调用；
+				// function 名字(){自己的js程序}
+				// 如果要执行这个函数中的js程序，必须要写 函数名（）才能执行函数中的命令
+				// 自定义函数在js运行时会优先执行函数；函数必须调用才可以执行其中的js代码
+				function hi(){
+					alert("弹出");
+				}
+				hi();
+			}
+		</script>
+
+## 7、xml
+
+<!-- xml传输数据，自定义标签，双标签，标签嵌套不能出问题 -->
+<person>
+	<height>1.8</height>
+	<age>18</age>
+	<wight>100</wight>
+</person>
+
+## 8、软件测试质量
+
+为什么需要软件测试：对软件要求越来越高，不仅关注于当前软件的主体功能是否可用，还会对软件的外观、易用性、执行效率等方面考虑
+
+为什么选择软件测试：创造世界从事开发工作，世界变得更美好从事软件测试；国内对软件测试的需求量非常大。
+
+为什么不让开发自己做测试：专业度：测试和开发属于软件行业不同的技术方向；思维定式：软件开发周期，开发人员主要思考软件功能如何实现，而不会主动从用户角度出发，如何使用此功能；测试力度，测试者测试深度更高。
+
+软件测试：通过手工或者工具对被测对象操作，从而验证实际结果与预期结果之间是否存在差异。
+
+测试工作的目的就是通过尽可能少的人力、财力、物力才查找并解决软件中存在的缺陷从而降低商业风险等。
+
+### 1、测试原则：
+
+测试证明软件存在缺陷：测试工作只能证明当前软件存在缺陷而不能证明它没有缺陷；
+
+不能执行穷尽测试：具体的测试操作不可能将所有的情况一一罗列出来，应该分类别测试；
+
+测试应尽早介入：一般不要在开发完成后才执行测试，这样不利于缺陷的尽早发现；
+
+缺陷存在群集现象：2 8原则，软件的核心功能只占20%，出现bug的总量占总个比例的80%左右；非核心模块80%的代码，出现bug数量占总量的20%左右。所以在测试的时候会花更多的时间去专门测试核心功能。
+
+某些测试操作依赖于特定的测试环境；
+
+杀虫剂现象：不要过多使用同一条测试案例来对软件进行问题查找。解决办法多采用交叉测试，a测试b，b测试a。
+
+不存在缺陷的缪论：任何软件不可能是完美的；
+
+### 2、常见软件架构：
+
+最常见的两种架构：B/S（浏览器--服务器模型）和C/S（客户端--服务器模型）
+
+b/s与c/s比较：
+
+标准：bs架构无论是浏览器还是服务器都有现成软件使用，而cs架构的客户端一般根据不同的操作系统自定义开发，因此相对来说bs标准些。
+
+效率：bs架构中所有数据的处理都发生在服务器端；cs的客户端可以分担一些服务器数据处理工作， 有默认导航栏之类的，因此cs的处理效率相对较高；
+
+升级：bs架构只需要将服务器进行更新，那么前台页面会自动刷新；而cs架构如果想要升级，需要删除老版本，安装新版本。
+
+安全性：bs安全性低一些，用户量大；cs安全性高些；
+
+开发成本：浏览器不需要开发，cs开发成本高些。
+
+### 3、常见的图片类型：
+
+.jpg：颜色信息比较丰富的一种图片格式；
+
+.png：可以支持透明的一种图片格式；
+
+.gif：支持动图，占用体积小；
+
+.psd：分层的图片【常见于psd设计稿】
+
+### 4、域名和服务器
+
+域名：为了方便用户记忆而自己设计的一个名字，需要花钱购买，比如在万网下阿里云购买域名。域名一般分为三个部分：
+
+一级域名：最后一个点后面的内容：.com .cn .net
+
+二级域名：一级左边,baidu,一般都是需求方自己设计，一级域名和二级域名连在一起应该是全世界唯一。
+
+三级域名：一般都是用户自定义，最常见的是www
+
+服务器：认为是一台电脑，，它的上面可以安装相应的服务器软件，为用户提供服务操作。
+
+URL：在浏览器地址栏中的一长串：协议+域名+端口号+路径+具体的文件名称组成。
+
+网站的访问过程：
+
+在浏览器中输入URL；
+
+解析URL，找到相应的IP；
+
+查找IP，首先会从本地的hosts文件开始，如果找不到则去DNS服务器查找；
+
+如果DNS找到了目标的IP，先发送一个测试的请求，通过之后再发送正式请求；
+
+服务器接收到正式的请求之后，并验证通过之后，会找到当前请求想要的文件；
+
+服务器处理请求；
+
+服务器处理完成之后通过http协议还给浏览器。（浏览器用渲染引擎来进行渲染展示）
+
+### 5、网络基本概念
+
+客户端（Client）：移动应用（IOS、Android、Web等应用）；
+
+服务器（Server）：为客户端提供服务、提供数据、提供资源的机器；
+
+请求（Request）：客户端向服务器索取数据的一种行为；
+
+响应（Response）：服务器对客户端的请求作出反应，一般指返回数据给客户端；
+
+协议：计算机通信网络中两台计算机之间进行通信所必须遵守的规则或规定。
+
+HTTP协议：超文本传输协议，是一种规定了浏览器和服务器之间通信的规则；
+
+URL（统一资源定位符）：互联网上资源的地址、位置。每个资源都有一个唯一的URL。
+
+格式：协议：//主机地址/路径

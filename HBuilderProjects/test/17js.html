@@ -6,21 +6,25 @@
 		<style type="text/css">
 			/* css进行实体化 */
 			/* #div1{width: 100px; height: 100px; background:red;} */
-			div {
+			/* div {
 				width: 100px;
 				height: 100px;
 				background: skyblue;
 				margin: 10px
-			}
+			} */
 		</style>
 	</head>
 	<body>
 		<!-- <div id="div1">div1</div>
 		<div id="div2">div2</div> -->
-		<div id="box"></div>
+		<!-- <div id="box"></div>
 		<input type="button" value="变宽" id="btn_w" />
 		<input type="button" value="变高" id="btn_h" />
-		<input type="button" value="变色" id="btn_c" />
+		<input type="button" value="变色" id="btn_c" /> -->
+		<div class="div1">类名为div1</div>
+		<div class="div1">类名为div1</div>
+		<div>没有设置属性</div>
+		<div name="hbu">name为hbu</div>
 	</body>
 </html>
 <script type="text/javascript">
@@ -38,18 +42,35 @@
 
 	// 事件：在什么情况下做了什么事情； 事件三要素：事件源.事件类型=匿名函数里边写的就是要执行的命令。
 	// 找到页面中的id元素后，习惯性的保存到变量中，方便后续的使用
-	var btn_w = document.getElementById("btn_w");
-	var box = document.getElementById("box");
-	var btn_h=document.getElementById("btn_h");
-	var btn_c=document.getElementById("btn_c");
-	btn_w.onclick = function() {
-		// 点击后执行的命令
-		box.style.width="200px";
-	}
-	btn_h.onclick = function(){
-		box.style.height="200px";
-	}
-	btn_c.onclick = function(){
-		box.style.background="red";
-	}
+	// var btn_w = document.getElementById("btn_w");
+	// var box = document.getElementById("box");
+	// var btn_h=document.getElementById("btn_h");
+	// var btn_c=document.getElementById("btn_c");
+	// btn_w.onclick = function() {
+	// 	// 点击后执行的命令
+	// 	box.style.width="200px";
+	// }
+	// btn_h.onclick = function(){
+	// 	box.style.height="200px";
+	// }
+	// btn_c.onclick = function(){
+	// 	box.style.background="red";
+	// }
+	
+	// 通过类名定位元素，必须在后面添加[数字] 数字计数从0开始 点击div弹框
+	// document.getElementsByClassName("div1")[0].onclick=function(){
+	// 	alert();
+	// }
+	
+	// 通过标签名字定位元素，也要加[数字]
+	// document.getElementsByTagName("div")[0].onclick=function(){
+	// 	alert();
+	// }
+	 
+	 // 通过name属性值定位元素，也需要加[数字] name的值可以重复出现
+	 document.getElementsByName("hbu")[0].onclick=function(){
+		 alert();
+	 }
+	
+	
 </script>
