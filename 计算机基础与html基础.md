@@ -211,20 +211,20 @@ type="text"，代表普通的输入框，type="password"代表密码框；placeh
 
 下拉框：注意默认选项是否符合要求；总共的下拉可选数也要符合要求。默认被选中，selected="selected"
 
-<select name="">
+\<select name="">
 			  	<option value="">北京</option>
 				<option value="">上海</option>
 				<option value="" selected="selected">广州</option>
 				<option value="">深圳</option>
-			  </select>
+\</select>
+
 
 文本域：cols和rows分别代表列和行，程序员一般不适用这个属性，因为有兼容性问题，使用css来解决；右下角按钮要关闭，不允许用户自行改变大小，需要在表头加入css：
 
 <style type="text/css">
 			textarea{resize: none;}
 		</style>
-
-<textarea placeholder="请填写您的意见" cols="" rows=""></textarea>
+\<textarea placeholder="请填写您的意见" cols="" rows=""></textarea>
 
 按钮：普通按钮、重置按钮、提交按钮
 
@@ -234,15 +234,16 @@ type="text"，代表普通的输入框，type="password"代表密码框；placeh
 
 无序标签：ul li   有序标签：ol li
 
-<ul>
+\<ul>
 			<li>111</li>
 			<li>222</li>
-		</ul>
+\</ul>
+
 ```html
-  <ol>
+  \<ol>
 		<li>111</li>
 		<li>222</li>
-	</ol>
+	\</ol>
 ```
 ## 3、css
 
@@ -251,7 +252,6 @@ style写在head里边，type=“text/css”，此代码可有可无；div{}表�
 <style type="text/css">
 			div{color: maroon; font-size:30px;}
 </style>
-
 **css选择器**：简单选择器，复合选择器。
 
 简单选择器：标签名选择器，类名选择器，id名选择器
@@ -448,17 +448,17 @@ html5结构标签：
 
 **html5新增表单验证相关属性：**
 
-<form action="" method="get">
+\<form action="" method="get">
 			<!-- required属性就是来设置空判断，输入框为空时提醒;autofocus自动获取焦点，光标自动在输入框 -->
 			<input type="text" required="required" autofocus="autofocus"/><br />
 			<!-- 属性autocomplete设置为on，默认为off，name的值对应着我们提交的数据所保存的文件夹一样的地方。再次填写时，会有以前填写内容的提示 -->
 			<input type="text" autocomplete="on" name="hd"/>
 			<input type="submit" value="提交" />
-		</form>
+		\</form>
 
 **html5新增表单标签：**
 
-<form action="" method="get">
+\<form action="" method="get">
 			<!-- type="email" 实现邮箱地址的验证 -->
 			邮箱：<input type="email"><br />
 			<!-- type="url"就可以实现验证是否为网址，必须包含http://协议 -->
@@ -480,7 +480,8 @@ html5结构标签：
 			<!-- type="range"显示滑块 -->
 			<input type="range" />
 			<input type="submit" value="提交"/><br />
-</form>
+\</form>
+
 
 html5音频标签：
 
