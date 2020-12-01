@@ -276,11 +276,12 @@ style写在head里边，type=“text/css”，此代码可有可无；div{}表�
 		</div>
 标签名选择器：通过标签名称来选中元素；
 
-<style type="text/css">
+\<style type="text/css">
 			div{color: maroon; font-size:20px;}
 			p{color: aqua;}
 			h2{color: blue;}
-</style>
+\</style>
+
 
 类名选择器(class)：通过标签的类名来选中元素；累选择器使用.类名；类名可以重复使用；同一个标签可以设置多个类名，使用空格分割即可，id选择器只允许每个标签有一个id名。class不允许数字开头命名；class不允许使用符号，除了下划线_和中划线-可以使用；class不推荐使用中文；名字最好见名知意。
 
@@ -334,7 +335,7 @@ css文件存放位置：内嵌css、外链式css、行内css
 
 **行内css**：写在标签内部
 
-<div style="color: red; font-size: 12px;">哈哈哈</div>
+\<div style="color: red; font-size: 12px;">哈哈哈</div>
 
 总结：
 
@@ -366,7 +367,7 @@ css盒子模型：
 
 盒子模型内边距padding：
 
-<style type="text/css">
+\<style type="text/css">
 			div{width: 100px; height: 100px;background: pink;
 			/* 最基本的内边距、内填充、padding写法 四个方向间距一致 */
 			/* padding:10px; */
@@ -382,11 +383,12 @@ css盒子模型：
 			/* 四个值：上 右 下 左 顺时针 */
 			padding: 10px 20px 30px 40px;
 			}
-</style>
+\</style>
+
 
 盒子模型外边距margin：
 
-<style type="text/css">
+\<style type="text/css">
 			div{width: 100px; height: 100px;background: pink;
 			/* 最基本的边框写法 */
 			/* border: 1px solid red; */
@@ -422,7 +424,7 @@ css盒子模型：
 			/* 顺时针，上 右 下 左 */
 			margin: 10px 20px 30px 40px;
 			}
-		</style>
+\</style>
 
 ## 4、html5
 
