@@ -36,3 +36,107 @@ linux只有根目录，不再有c、d等盘。
 
 /mnt：挂载。android基于linux，在mnt下
 
+# 3、常用的命令
+
+用终端terminal中输入命令
+
+命令格式：command [-options] [parameter]
+
+command --help 帮助文档
+
+cd 切换文件夹：
+
+​	绝对路径：以根目录开头，比如/home
+
+​	相对路径：不以根目录开头
+
+​	cd .. 回到上一级目录；cd ~ ：到自己的家目录(~) /Users/xuleping；cd - 电视回看功能
+
+pwd查看当前路径；
+
+ls 显示当前目录下的内容
+
+​	ls -a：显示当前目录下的所有文件（包括隐藏文件，隐藏文件是以.开头的文件）
+
+​	ls -l（ll）：显示详细列表信息
+
+​	ls -lh（ll-h）：大小默认为字节B，加上h会显示单位，把文件大小以人性化方式显示。1B（字节）=8b（位）
+
+​	ls -al
+
+​	ls -alh
+
+mkdir 创建文件夹
+
+​	mkdir test：在当前目录下创建文件夹；也可以指定目录创建文件夹
+
+​	mkdir -p test/test1：递归创建文件夹，如果上级目录不存在，加上-p自动创建父目录
+
+​	mkdir test1 test2：在当前目录下创建多个文件夹，用空格分隔
+
+​	mkdir test/{test1,test2}：在指定目录下创建多个文件夹，用{}
+
+​	mkdir .test 以.开头，创建隐藏文件夹
+
+​	.和.. 隐藏文件夹是任何目录下的隐藏文件夹，.代表当前目录，..代表上一级目录。
+
+touch 创建空文件
+
+​	touch a.txt 在当前目录创建空文件，如果指定了目录，必须保证上级目录存在。
+
+​	touch a b 同时创建多个文件，用空格分开
+
+​	touch .a 创建隐藏文件
+
+vim 创建并编辑，若已经创建，直接编辑即可
+
+rm 删除文件
+
+​	rm a.txt 删除文件
+
+​	rm a.txt b.txt 同时删除多个文件
+
+​	rm -r 删除文件夹
+
+​	rm -r *：删除当前目录下所有文件，不包括隐藏文件
+
+clear：翻屏
+
+tab键：自动补全
+
+上下键可以切换到以前使用过的命令
+
+ctrl(control)+c：强制退出
+
+ctrl+ 可以使字体变大
+
+ctrl- 可以使字体变小
+
+ls -l：xuleping当前用户，staff表示组用户
+
+d rwx r-x r-x：d 代表文件夹，- 代表文件；r可读 w可写 r执行，三组分别代表当前用户（文件拥有者）权限，文件拥有的组权限，其他用户权限。
+
+![image-20201202191458302](/Users/xuleping/Library/Application Support/typora-user-images/image-20201202191458302.png)
+
+ls查看其它目录的内容
+
+ls可以直接定位来查找，不用通过cd再查找，比如：ls -l test，查看test文件夹下的目录
+
+通配符 :
+
+​	*：任意 ，比如：ls *txt 查看当前目录下所有以txt结尾的文件。
+
+​	？：一个，文件名中任意一个字符
+
+​	[] 匹配字符组中的任意一个
+
+​	[abc] 匹配a b c中的任意一个
+
+​	[a-x] 匹配字符组 a-x 的任意一个
+
+​	\  转义
+
+cp 复制文件：cp a.txt b.txt
+
+cp -a a.txt b.txt：复制目录时使用，保留文件原有属性，包括链接、文件属性、时间等。
+
