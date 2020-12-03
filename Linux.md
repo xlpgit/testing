@@ -230,7 +230,7 @@ find 查找文件
 
 ​	find . -name '*txt'：在当前文件夹下查找以txt结尾的文件，需要加单引号
 
-tar 归档管理 打包
+tar 归档管理 文件打包，解包
 
 ​	-c 生成压缩包文件（compress)；-f 指定压缩文件(file)；-t 列出压缩文件中的内容；-x 从压缩包中抽取文件（解）；-v 显示操作过程
 
@@ -239,3 +239,31 @@ tar 归档管理 打包
 ​	tar xvf first.tar：在当前目录下解压。如果没写目录，把包里面的文件解开放到当前目录
 
 ​	tar xvf first.tar -C tar：解压到指定文件夹，文件夹需要提前创建好。
+
+gzip 文件压缩，解压；-r压缩，-d解压
+
+​	生成压缩文件：先打包后压缩；tar cvf first.tar 1.txt 2.txt 生成first.tar文件；gzip -r first.tar 生成压缩后的first.tar.gz文件
+
+​	解压压缩文件：先解压后解包；gzip -d first.tar.gz 生成first.tar文件；tar xvf first.tar -C test/ 解包到指定文件中
+
+实际应用中可以tar与gzip可以结合使用：
+
+​	一步到位，打包并压缩：tar zcvf two.tar.gz *.txt 以gzip的方式打包并压缩。
+
+​	一步到位，解压并且解包：tar zxvf two.tar.gz -C test/ 以gzip的方式解压并且解包。
+
+bzip2 文件压缩解压
+
+​	一步到位，打包并压缩：tar jcvf three.tar.bz2 *txt   以bzip2方式
+
+​	一步到位，解压并解包：tar jxvf three.tar.bz2 -C test3/  以bizp2方式
+
+zip,unzip文件压缩，解压
+
+​	zip -r four *txt  four表示要生成的压缩文件，不需要写扩展名，会自动生成zip扩展名
+
+​	unzip -d four four.zip 解压时会自动创建目录
+
+压缩率，zip<gzip<bzip2
+
+通用性：zip>gzip>bzip2
