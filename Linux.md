@@ -238,4 +238,4 @@ tar 归档管理 打包
 
 ​	tar xvf first.tar：在当前目录下解压。如果没写目录，把包里面的文件解开放到当前目录
 
-​	tar xvf first.tar -C tar：解压到指定文件夹，文件夹需要提前创建好
+​	tar xvf first.tar -C tar：解压到指定文件夹，文件夹需要提前创建好。
