@@ -267,3 +267,36 @@ zip,unzip文件压缩，解压
 压缩率，zip<gzip<bzip2
 
 通用性：zip>gzip>bzip2
+
+which 查看命令位置
+
+su 	切换管理员权限，su root; su xuleping; su admin
+
+passwd 设置密码
+
+exit 退出登录
+
+who 查看当前登录的用户
+
+pst/0 代表一个终端；tty代表用户登录了操作系统
+
+reboot重启，不需要权限，shutdown关机 shutdown -h +10 设置10分钟后关机  --需要root权限
+
+chmod 修改文件权限 字母法+数字法
+
+字母法：
+
+​	r/w/x/-：可读，可写，可执行，无权限
+
+​	u/g/o/a对应：user/group/other/all   文件的拥有者，文件的拥有的组，其他用户，所有用户
+
+​	+-=：当前权限基础上增加权限，当前权限基础上减权限，赋值权限(把之前的权限换成新的权限)
+
+​	chmod u+r test.txt 给文件的拥有者添加r（读）权限
+
+数字法：
+
+​	r/w/x/-：分别对应的数字上4，2，1，0
+
+​	chmod 123 test.txt  第一位数字代表自己的权限；第二位代表自己组的权限，第三位代表其他人的权限。执行；写权限；读和执行权限
+
