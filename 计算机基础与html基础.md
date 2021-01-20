@@ -143,7 +143,9 @@ title作用是鼠标悬停到图片时的提示文字 ，定义图片的标题�
 
 alt属性定义图片的提示文字，当图片无法正常加载的时候才会显示出来  写的文字一般来说是对图片的描述信息
 
-\<img src="01.jpeg"  width=""  height="" title="小孩"/> 
+```html
+<img src="01.jpeg"  width=""  height="" title="小孩"/> 
+```
 
 3、路径
 
@@ -157,35 +159,49 @@ alt属性定义图片的提示文字，当图片无法正常加载的时候才�
 
 同级路径：html文件与被查找的图片放在同一级目录下，二者是“兄弟”关系，此时只需在src中写入图片名称即可。
 
-\<img src="01.jpg"/>
+```html
+<img src="01.jpg"/>
+```
 
 下级路径：html文件与图片不在同级目录，此时要查找的图片被放在了html文件的下级目录中，此时需要通过/来向下查找。
 
-\<img src="img/1.jpg"/>
+```html
+<img src="img/1.jpg"/>
+```
 
 上级路径：仍以html文件为起点，此时图片被存放在了html文件上级目录，需要使用../来向上进行回退查找。
 
-\<img src="../1.jpg"/>
+```html
+<img src="../1.jpg"/>
+```
 
 4、超链接
 
 跳转到线上网站，需要添加http:// 超文本传输协议，才可以正常跳转
 
-\<a href="http://www.baidu.com">跳转到百度</a>
+```html
+<a href="http://www.baidu.com">跳转到百度</a>
+```
 
 跳转到本地文件，直接写文件即可。
 
-\<a href="01.html">打开本地文件</a>
+```html
+<a href="01.html">打开本地文件</a>
+```
 
 新窗口打开，加属性target="_blank"
 
-\<a href="01.html" target="_blank">点击可以新窗口打开</a>
+```html
+<a href="01.html" target="_blank">点击可以新窗口打开</a>
+```
 
 有些情况下，无法确定链接的跳转，可以写空链接语法，注意一个#号的空链接，会让页面一瞬间返回顶部。
 
-\<a href="##">空链接</a>
-\<a href="javascript:;">空链接</a>
-\<a href="javascript:void(0);">空链接</a>
+```html
+<a href="##">空链接</a>
+<a href="javascript:;">空链接</a>
+<a href="javascript:void(0);">空链接</a>
+```
 
 5、表单
 
@@ -193,38 +209,49 @@ form标签就是作为表单数据的根标签。
 
 前端把用户信息收集好之后，点击确定，发送给后端进行数据的保存。action属性的值就是把所有的表单内容，传给某个后台程序来解决。method代表传输数据时候的方法：get会显示在URL地址的后面，post会在http协议的请求体中。
 
-\<form action="" method="post"></form>
+```html
+<form action="" method="post"></form>
+```
 
 type="text"，代表普通的输入框，type="password"代表密码框；placeholder属性可以设置用户的提醒文字
 
+```html
 <input type="text" placeholder="请输入用户名"/>
+```
 
 **单选框**：type="radio" ；关注点击时是否实现单选效果，需要保持name一致，证明是一组；点击文字也可以实现切换效果，会提升用户体验，需要在input框中加入id属性，点文字能够切换，需要加label标签，添加for属性与联动的input的id需要一致。默认选中，checked="checked"
 
+```html
 <input type="radio" name="sex" id="nan" checked="checked"/> <label for="nan" >男</label> 
-			 <input type="radio" name="sex" id="nv" /><label for="nv">女</label>
+<input type="radio" name="sex" id="nv" /><label for="nv">女</label>
+```
 
 **复选框（多选框）**：可以全部选，也可以只选一个；为了提升用户体验也要和单选框一样，点击提示文字，也可以选上。默认选中，checked="checked"。
 
+```html
 爱好：<input type="checkbox" id="basketball" checked="checked"/> <label for="basketball">篮球</label>
-			  <input type="checkbox" id="football"/><label for="football">足球 </label>
+<input type="checkbox" id="football"/><label for="football">足球 </label>
+```
 
 下拉框：注意默认选项是否符合要求；总共的下拉可选数也要符合要求。默认被选中，selected="selected"
 
-\<select name="">
-			  	<option value="">北京</option>
+```html
+<select name="">
+			  <option value="">北京</option>
 				<option value="">上海</option>
 				<option value="" selected="selected">广州</option>
 				<option value="">深圳</option>
-\</select>
-
+</select>
+```
 
 文本域：cols和rows分别代表列和行，程序员一般不适用这个属性，因为有兼容性问题，使用css来解决；右下角按钮要关闭，不允许用户自行改变大小，需要在表头加入css：
 
+```html
 <style type="text/css">
 			textarea{resize: none;}
-		</style>
-\<textarea placeholder="请填写您的意见" cols="" rows=""></textarea>
+</style>
+<textarea placeholder="请填写您的意见" cols="" rows=""></textarea>
+```
 
 按钮：普通按钮、重置按钮、提交按钮
 
@@ -234,28 +261,32 @@ type="text"，代表普通的输入框，type="password"代表密码框；placeh
 
 无序标签：ul li   有序标签：ol li
 
-\<ul>
+```html
+<ul>
 			<li>111</li>
 			<li>222</li>
-\</ul>
-
-```html
-  \<ol>
+</ul>
+<ol>
 		<li>111</li>
 		<li>222</li>
-	\</ol>
+</ol>
 ```
+
 ## 3、css
 
 style写在head里边，type=“text/css”，此代码可有可无；div{}表示对div里的内容进行修改，color文字颜色，font-size字体大小，px代表像素，计算机中的计量单位。
 
+```html
 <style type="text/css">
 			div{color: maroon; font-size:30px;}
 </style>
+```
+
 **css选择器**：简单选择器，复合选择器。
 
 简单选择器：标签名选择器，类名选择器，id名选择器
 
+```html
 <style type="text/css">
 			/* div{color: maroon; font-size:20px;}
 			p{color: aqua;}
@@ -267,29 +298,35 @@ style写在head里边，type=“text/css”，此代码可有可无；div{}表�
 				color: red;
 			}
 </style>
+	<p id="p1" class="pname1">段落1</p>
+	<p id="p2" class="pname1">段落2</p>
+	<p id="p3" class="pname1">段落3</p>
+	<div class="pname1">
+		使用css改变样式1
+	</div>
+```
 
-		<p id="p1" class="pname1">段落1</p>
-		<p id="p2" class="pname1">段落2</p>
-		<p id="p3" class="pname1">段落3</p>
-		<div class="pname1">
-			使用css改变样式1
-		</div>
 标签名选择器：通过标签名称来选中元素；
 
-\<style type="text/css">
+```html
+<style type="text/css">
 			div{color: maroon; font-size:20px;}
 			p{color: aqua;}
 			h2{color: blue;}
-\</style>
+</style>
+```
 
+类名选择器(class)：通过标签的类名来选中元素；累选择器使用**.类名**；类名可以重复使用；同一个标签可以设置多个类名，使用空格分割即可，id选择器只允许每个标签有一个id名。class不允许数字开头命名；class不允许使用符号，除了下划线_和中划线-可以使用；class不推荐使用中文；名字最好见名知意。
 
-类名选择器(class)：通过标签的类名来选中元素；累选择器使用.类名；类名可以重复使用；同一个标签可以设置多个类名，使用空格分割即可，id选择器只允许每个标签有一个id名。class不允许数字开头命名；class不允许使用符号，除了下划线_和中划线-可以使用；class不推荐使用中文；名字最好见名知意。
-
+```html
 .pname1{color: red;}
+```
 
 id名选择器：通过标签的id名来选中元素；#id的属性值，叫做id选择器。id的值一定不能重复；id命名数字不能开头；id不推荐使用中文；id不允许使用符号，除了下划线_和中划线-可以使用；名字最好见名知意。
 
+```html
 #p1{color: red;}
+```
 
 **css特性**：继承性、覆盖性
 
@@ -305,21 +342,32 @@ id名选择器：通过标签的id名来选中元素；#id的属性值，叫做i
 
 可以使用标签、类名、id
 
-<style type="text/css"> div span{color:red;} .bz span{color: red;} #div1 span{color: red;} </style>
-
+```html
+<style type="text/css"> 
+  div span{color:red;} 
+  .bz span{color: red;} 
+  #div1 span{color: red;}
+</style>
+<style type="text/css"> 
+  div span{color:red;} 
+  .bz span{color: red;} 
+  #div1 span{color: red;} 
+</style>
 <div class="bz" id="div1">
 			<p>
 				<span>span内容</span>
 			</p>
 </div>
+```
 
 **并列（并集）选择器**：用逗号分隔；可以使用任意一种普通选择器来进行书写。
 
 div与p是同一级：
 
+```html
 div,p{color: red;}
-
 #div1,#div2,.p1{color: red;}
+```
 
 **基础选择器权重**：针对同一个标签设置css才有权重：id>class>标签；继承的权重最低
 
@@ -331,11 +379,17 @@ css文件存放位置：内嵌css、外链式css、行内css
 
 **外链式css**：link将css文件引入到html的方法。
 
-需要重新写一个css文件，并在head中引入到当前html文件中。<link rel="stylesheet" type="text/css" href="css.css">
+需要重新写一个css文件，并在head中引入到当前html文件中。
+
+```html
+<link rel="stylesheet" type="text/css" href="css.css">
+```
 
 **行内css**：写在标签内部
 
-\<div style="color: red; font-size: 12px;">哈哈哈</div>
+```html
+<div style="color: red; font-size: 12px;">哈哈哈</div>
+```
 
 总结：
 
@@ -353,6 +407,7 @@ css盒子模型：
 
 盒子模型边框属性border：
 
+```html
 <style type="text/css">
 			div{width: 100px; height: 100px;background: pink;
 			/* 最基本的边框写法 */
@@ -364,10 +419,12 @@ css盒子模型：
 			border-right: 10px dashed green;
 			}
 </style>
+```
 
 盒子模型内边距padding：
 
-\<style type="text/css">
+```html
+<style type="text/css">
 			div{width: 100px; height: 100px;background: pink;
 			/* 最基本的内边距、内填充、padding写法 四个方向间距一致 */
 			/* padding:10px; */
@@ -383,12 +440,13 @@ css盒子模型：
 			/* 四个值：上 右 下 左 顺时针 */
 			padding: 10px 20px 30px 40px;
 			}
-\</style>
-
+</style>
+```
 
 盒子模型外边距margin：
 
-\<style type="text/css">
+```html
+<style type="text/css">
 			div{width: 100px; height: 100px;background: pink;
 			/* 最基本的边框写法 */
 			/* border: 1px solid red; */
@@ -424,7 +482,8 @@ css盒子模型：
 			/* 顺时针，上 右 下 左 */
 			margin: 10px 20px 30px 40px;
 			}
-\</style>
+</style>
+```
 
 ## 4、html5
 
@@ -432,15 +491,17 @@ h5指的是：html5+css+javascript
 
 html5结构标签：
 
+```html
 <body>
 		<!-- 在html5中这些结构标签都可以增加网站的语义化，从而提升搜索引擎对网站的排名 -->
-
 		<header>头</header>
 		<nav>导航</nav>
 		<aside>侧边栏</aside>
 		<article>文章块</article>
 		<footer>底部</footer>
-​	</body>
+
+</body>
+```
 
 **数据列表标签**：下拉表可以手动输入
 
@@ -450,17 +511,20 @@ html5结构标签：
 
 **html5新增表单验证相关属性：**
 
-\<form action="" method="get">
+```html
+<form action="" method="get">
 			<!-- required属性就是来设置空判断，输入框为空时提醒;autofocus自动获取焦点，光标自动在输入框 -->
 			<input type="text" required="required" autofocus="autofocus"/><br />
 			<!-- 属性autocomplete设置为on，默认为off，name的值对应着我们提交的数据所保存的文件夹一样的地方。再次填写时，会有以前填写内容的提示 -->
 			<input type="text" autocomplete="on" name="hd"/>
 			<input type="submit" value="提交" />
-		\</form>
+</form>
+```
 
 **html5新增表单标签：**
 
-\<form action="" method="get">
+```html
+<form action="" method="get">
 			<!-- type="email" 实现邮箱地址的验证 -->
 			邮箱：<input type="email"><br />
 			<!-- type="url"就可以实现验证是否为网址，必须包含http://协议 -->
@@ -482,33 +546,35 @@ html5结构标签：
 			<!-- type="range"显示滑块 -->
 			<input type="range" />
 			<input type="submit" value="提交"/><br />
-\</form>
-
+</form>
+```
 
 html5音频标签：
 
+```html
 <!-- 音频标签价值很高，浏览器都想以自己为标准，所以W3C联盟组织，就规定了浏览器对音频标签的兼容性要求。
 		 如果想要主流的浏览器都能很好的播放音频，就需要把音频设置为不同的格式，都加载到页面中，这样就可以保证浏览器兼容性。-->
 		<!-- <audio src="shenshi.mp3" controls="controls" autoplay="autoplay" loop="loop"></audio> -->
 		<!-- 一个audio标签可以添加多个音频的源 -->
-		<!-- controls音频条，autoplay自动播放，loop循环播放-->
-
-		<audio controls="controls" autoplay="autoplay" loop="loop">
-			<source src="shenshi.mp3"></source>
-			<source src="shenshi.ogg"></source>
-		</audio>
+		<!-- controls音频条，autoplay自动播放，loop循环播放-->	
+<audio controls="controls" autoplay="autoplay" loop="loop">
+		<source src="shenshi.mp3"></source>
+		<source src="shenshi.ogg"></source>
+	</audio>
+```
 
 html5视频标签：
 
+```html
 <!-- 视频标签 -->
-
-		<video controls="controls" autoplay="autoplay" loop="loop">
-			<!-- 执行顺序，由上向下，能识别哪个就直接播放 -->
-			<source src="video.mp4" type="video/mp4"></source>
-			<source src="video.ogg" type="video/ogg"></source>
-			<!-- 浏览器无法识别以上视频时，才会显示给用户看，用户可以点击链接下载视频，使用本地的播放器来看 -->
-			当前浏览器不支持video直接播放，点击这里下载视频：<a href="">下载视频</a>
-		</video>
+	<video controls="controls" autoplay="autoplay" loop="loop">
+		<!-- 执行顺序，由上向下，能识别哪个就直接播放 -->
+		<source src="video.mp4" type="video/mp4"></source>
+		<source src="video.ogg" type="video/ogg"></source>
+		<!-- 浏览器无法识别以上视频时，才会显示给用户看，用户可以点击链接下载视频，使用本地的播放器来看 -->
+		当前浏览器不支持video直接播放，点击这里下载视频：<a href="">下载视频</a>
+	</video>
+```
 
 ## 5、css3
 
@@ -518,16 +584,25 @@ html5视频标签：
 
 **css3盒子阴影效果：**
 
+```html
 /* 盒子阴影效果 */
-			div{width: 200px; height:100px; background: gold; margin: 10px; border-radius: 10px;
-			 border: 1px solid black;}
-			 /* box-shadow：水平方向 垂直方向 阴影大小 阴影颜色*/
-			 .div1{box-shadow: 0px 0px 30px red;}
-			 /* inset实现的效果就是内阴影 */
-			 .div2{box-shadow: 0px 0px 30px red inset;}
+div{
+	width: 200px; 
+	height:100px; 
+	background: gold; 
+	margin: 10px; 
+	border-radius: 10px;
+	border: 1px solid black;
+}
+/* box-shadow：水平方向 垂直方向 阴影大小 阴影颜色*/
+.div1{box-shadow: 0px 0px 30px red;}
+/* inset实现的效果就是内阴影 */
+.div2{box-shadow: 0px 0px 30px red inset;}
+```
 
 **css3半透明背景：**
 
+```html
 /* 透明背景 */
 			 body{background:url(01.jpeg)}
 			 /* background:rgba（红，绿，蓝，透明度值）
@@ -535,29 +610,39 @@ html5视频标签：
 			 透明度的值：0到1之间，0代表全透明，1代表全不透明。可以设置0到1之间的小数来代表透明度的百分比。 */
 			 div{width: 300px; height: 300px; border-radius:10px; background:rgba(85,124,173,0.5); 
 			 box-shadow: 3px 3px 8px black;}
+```
 
-css3文字阴影：text-shadow属性：x轴 y轴 阴影大小 色值；div{text-shadow:1px 1px 0px white}
+css3文字阴影：text-shadow属性：x轴 y轴 阴影大小 色值；
+
+```html
+div{text-shadow:1px 1px 0px white}
+```
 
 css3旋转、缩放、位移
 
+```html
 /* 翻转：transform: rotate(角度值) */
 			 .div1{transform: rotate(90deg);}
 			 /* 缩放：transform: scale(缩放比例) */
 			 .div2{transform: scale(0.3);}
 			 /* transform: translate(x轴位移,y轴位移) */
 			 .div3{transform: translate(100px,100px);}
+```
 
 css3过渡属性：
 
+```html
  /* 过渡属性 */
 			 div{width: 200px; height: 50px; background: rgba(255, 0, 56, 0.3); margin: 50px;
 			 transition: all 1s;}
 			 /* transition：想要过渡的属性，一般都写all，代表所有属性只有变化了都以过渡动画的形式展示，时间代表动画的执行时间 */
 			 /* hover叫css伪类，鼠标悬停时候的样式 */
 			 .div1:hover{transform: scale(1.5);background: rgba(25, 0, 56, 0.3);}
+```
 
 css3属性hover同时实现放大和旋转效果
 
+```html
 div:hover{
 				/* 同一个属性名，值使用空格分隔即可实现多个值书写 */
 				transform:scale(1.3) rotate(360deg);
@@ -587,24 +672,26 @@ div:hover{
 				border-radius: 10px;
 				animation: go 1s infinite alternate;
 			}
+/* 使用keyframes定义动画 */
+		@keyframes go {
 
-			/* 使用keyframes定义动画 */
-			@keyframes go {
-	
-				/* 开始时候状态 */
-				from {
-					background: red;
-					transform: translate(0px, 0px);
-				}
-	
-				/* 结束时候状态 */
-				to {
-					background: blue;
-					transform: translate(100px, 0px)
-				}
+			/* 开始时候状态 */
+			from {
+				background: red;
+				transform: translate(0px, 0px);
 			}
+
+			/* 结束时候状态 */
+			to {
+				background: blue;
+				transform: translate(100px, 0px)
+			}
+		}
+```
+
 卸载应用程序时出现颤抖效果：
 
+```html
 img:hover{animation:dou .1s 1s infinite alternate}
 			/* 可以使用百分比替代默认的from、to */
 			/* animation：时间如果出现两个，第一个代表动画运动时间，第二个代表延迟时间，也可以设置ease等变速效果 */
@@ -613,6 +700,7 @@ img:hover{animation:dou .1s 1s infinite alternate}
 				50%{transform:rotate(0deg)}
 				100%{transform:rotate(5deg)}
 			}
+```
 
 ## 6、js（JavaScript）
 
@@ -620,65 +708,80 @@ img:hover{animation:dou .1s 1s infinite alternate}
 
 现在是控制html和css的结构和样式。
 
+```html
 <script type="text/javascript">
 	// 弹出对话框 所有的js代码都要使用英文状态下的符号。小括号中可以使用双引号或者单引号来包裹文字。
 	alert("登录过期");
 </script>
+```
+
 
 **js找元素、找标签、找标记**
 
 // 找元素 document代表页面文档；getElementById 命名方式为驼峰命名法，用法是使用id获取页面中的标签、标记、元素；验证的使用可以用浏览器，打开f12调试工具下的console，输入此命令即可。
 
-​	document.getElementById("div1");
+```html
+document.getElementById("div1");
+```
 
 **js实体化**：
 
 // js实体化 先找到，再用英文状态下的点进行连接 可定义变量进行简化，var elementStyle=document.getElementById("div2").style;以后直接用变量使用就行。变量起名字注意事项：可以使用中文，可以使用符号_$，命名不可以使用数字开头，不允许使用js已经占用的单词（保留字）
+
+```html
 	document.getElementById("div2").style.width="200px";
 	document.getElementById("div2").style.height="200px";
 	document.getElementById("div2").style.background="blue";
+```
 
 **js点击事件**：点击三个按钮分别变宽、变高、变色
 
 
-	<script type="text/javascript">
-	// 事件：在什么情况下做了什么事情； 事件三要素：事件源.事件类型=匿名函数里边写的就是要执行的命令。
-	// 找到页面中的id元素后，习惯性的保存到变量中，方便后续的使用
-	var btn_w = document.getElementById("btn_w");
-	var box = document.getElementById("box");
-	var btn_h=document.getElementById("btn_h");
-	var btn_c=document.getElementById("btn_c");
-	btn_w.onclick = function() {
-		// 点击后执行的命令
-		box.style.width="200px";
-	}
-	btn_h.onclick = function(){
-		box.style.height="200px";
-	}
-	btn_c.onclick = function(){
-		box.style.background="red";
-	}
-	</script>
+```js
+<script type="text/javascript">
+// 事件：在什么情况下做了什么事情； 事件三要素：事件源.事件类型=匿名函数里边写的就是要执行的命令。
+// 找到页面中的id元素后，习惯性的保存到变量中，方便后续的使用
+var btn_w = document.getElementById("btn_w");
+var box = document.getElementById("box");
+var btn_h=document.getElementById("btn_h");
+var btn_c=document.getElementById("btn_c");
+btn_w.onclick = function() {
+	// 点击后执行的命令
+	box.style.width="200px";
+}
+btn_h.onclick = function(){
+	box.style.height="200px";
+}
+btn_c.onclick = function(){
+	box.style.background="red";
+}
+</script>
+```
 **js找页面标签的方法：**
 
-通过id定位元素：document.getElementById("div1");
+通过id定位元素：
+
+```html
+document.getElementById("div1");
 
 // 通过类名定位元素，必须在后面添加[数字] 数字计数从0开始 点击div弹框
 	// document.getElementsByClassName("div1")[0].onclick=function(){
 	// 	alert();
 	// }
+// 通过标签名字定位元素，也要加[数字]
+// document.getElementsByTagName("div")[0].onclick=function(){
+// 	alert();
+// }
+ 
+ // 通过name属性值定位元素，也需要加[数字] name的值可以重复出现
+ document.getElementsByName("hbu")[0].onclick=function(){
+	 alert();
+ }
+```
 
-	// 通过标签名字定位元素，也要加[数字]
-	// document.getElementsByTagName("div")[0].onclick=function(){
-	// 	alert();
-	// }
-	 
-	 // 通过name属性值定位元素，也需要加[数字] name的值可以重复出现
-	 document.getElementsByName("hbu")[0].onclick=function(){
-		 alert();
-	 }
 js事件总结：
 
+```js
 <script>
 	// 点击div执行弹出对话框操作
 	var div1=document.getElementById("div1");
@@ -701,14 +804,22 @@ js事件总结：
 		alert("鼠标移出事件被捕获");
 	}
 </script>
+```
+
 
 js书写位置：
 
-内嵌js：在html底部添加<script></script>
+内嵌js：在html底部添加
+
+```html
+<script></script>
+```
 
 外链js：添加另外的js文件，引入到src属性中
 
+```html
 <script type="text/javascript" src="19js.js"></script>
+```
 
 强烈推荐外链js，实现了代码的分离，修改会很方便。
 
@@ -718,22 +829,22 @@ js代码搬家：
 
 js代码<script></script>也应该放在head标签最后，而不是html后面。放在head里需要加window.onload
 
-<!-- 代码由上向下运行，没有获取到box。需要添加window.onload，当页面所有html内容都加载完毕后才执行此处的代码 -->
-
-		<script type="text/javascript">
-			window.onload=function(){
-				var box=document.getElementById("box");
-				box.onclick=function(){
-					alert("点击成功")
-				}
-			}	
-		</script>
+```html
+<!-- 代码由上向下运行，没有获取到box。需要添加window.onload，当页面所有html内容都加载完毕后才执行此处的代码 -->	
+<script type="text/javascript">
+		window.onload=function(){
+			var box=document.getElementById("box");
+			box.onclick=function(){
+				alert("点击成功")
+			}
+		}	
+	</script>
+```
 
 **js动态添加和删除文本：**
 
-<!-- innerHTML作用是设置标签的中间内容 -->
-
-		<script type="text/javascript">
+	<!-- innerHTML作用是设置标签的中间内容 -->
+	<script type="text/javascript">
 			window.onload=function(){
 				var box=document.getElementById("box");
 				var btn_add=document.getElementById("btn_add");
@@ -751,6 +862,7 @@ js代码<script></script>也应该放在head标签最后，而不是html后面�
 
 js函数：
 
+```html
 <script type="text/javascript">
 			window.onload=function(){
 				// 自定义函数作用：简化代码，实现重复性代码的简单调用；
@@ -762,16 +874,20 @@ js函数：
 				}
 				hi();
 			}
-		</script>
+</script>
+```
+
 
 ## 7、xml
 
+```xml
 <!-- xml传输数据，自定义标签，双标签，标签嵌套不能出问题 -->
 <person>
 	<height>1.8</height>
 	<age>18</age>
 	<wight>100</wight>
 </person>
+```
 
 ## 8、软件测试质量
 
