@@ -224,6 +224,7 @@ type="text"，代表普通的输入框，type="password"代表密码框；placeh
 ```html
 <input type="radio" name="sex" id="nan" checked="checked"/> <label for="nan" >男</label> 
 <input type="radio" name="sex" id="nv" /><label for="nv">女</label>
+<label for="nv">t</label>
 ```
 
 **复选框（多选框）**：可以全部选，也可以只选一个；为了提升用户体验也要和单选框一样，点击提示文字，也可以选上。默认选中，checked="checked"。
